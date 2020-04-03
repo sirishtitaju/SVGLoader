@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(17, 17, 17);
+        }
+
+        .container {
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .container svg {
+            height: 30vh;
+            width: auto;
+        }
+
+        .loader {
+            fill: none;
+            stroke: rgb(246, 246, 246);
+            stroke-width: 5px;
+            stroke-dasharray: 188.1910858154297 188.1910858154297;
+            stroke-dashoffset: 188.1910858154297;
+            stroke-linecap: round;
+            transform-origin: 50%;
+            animation: rotator 1.5s infinite alternate;
+        }
+
+        @keyframes rotator {
+            0% {
+                transform: rotate(0deg);
+                stroke: rgb(246, 246, 246);
+            }
+
+            50% {
+                transform: rotate(180deg);
+                stroke-dashoffset: 0px;
+                stroke: rgb(8, 250, 109);
+            }
+
+            100% {
+                transform: rotate(360deg);
+                stroke: rgb(17, 167, 253);
+            }
+        }
+    </style>
+    <script>
+        $(function () {
+            $(".container").fadeOut(2000, function () {
+                $(".content").fadeIn(1000);
+            });
+        });​
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <svg viewBox="0 0 100 100">
+            <circle class="loader" cx=50 cy=50 r=30>
+            </circle>
+        </svg>
+    </div>
+</body>
+
+</html>
